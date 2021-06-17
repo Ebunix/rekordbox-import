@@ -3,7 +3,8 @@ import sqlcipher from '@journeyapps/sqlcipher';
 import fs from 'fs';
 import pkg from 'jamp3';
 const {ID3v2} = pkg;
-
+import mp3Parser from 'mp3-parser';
+import path from 'path';
 
 function mergeMixxxHotcuesintoMixxxDb(src, dst) {
 	var source = new sqlite3.Database(src);
@@ -73,8 +74,10 @@ function mergeMixxxHotcuesIntoRekordboxDb(src, dst) {
 			for(var id of cueTids) {		
 				locStmt.each([id], function(err, trackLoc) {
 					var row = target.get("SELECT * FROM djmdContent WHERE FolderPath = ?", [trackLoc.location], function(err, djmd) {
+						if (path.extname(djmd.FileNameL) !== '.mp3') {
+							return;
+						}
 						source.all("SELECT * FROM cues WHERE track_id = ?", [trackLoc.id], function(err, cues) {
-
 							console.log("Merging " + djmd.FileNameL);	
 							var buffer = fs.readFileSync(trackLoc.location);						
 							buffer = new DataView(toArrayBuffer(buffer));
@@ -271,5 +274,5 @@ function importCuepointsFromSeratoTags(dst) {
 }
 
 
-//mergeMixxxHotcuesIntoRekordboxDb('mixxxdb.sqlite', 'M:\\PIONEER\\Master\\master.db');
-importCuepointsFromSeratoTags('M:\\PIONEER\\Master\\master.db');
+mergeMixxxHotcuesIntoRekordboxDb('M:\\Database\\mixxxdb.sqlite', 'D:\\PIONEER\\Master\\master.db');
+//importCuepointsFromSeratoTags('M:\\PIONEER\\Master\\master.db');

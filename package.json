@@ -1,0 +1,24 @@
+{
+  "name": "rekordbox-import",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "jamp3": "^0.4.3",
+    "mp3-parser": "^0.3.0",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebunix/rekordbox-import.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ebunix/rekordbox-import/issues"
+  },
+  "homepage": "https://github.com/ebunix/rekordbox-import#readme"
+}
