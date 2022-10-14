@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"outDir": "build",
+		"alwaysStrict": true,
+		"target": "es2017",
+		"moduleResolution": "node",
+		"module": "Node16",
+		"sourceMap": true,
+		"importHelpers": true,
+		"declaration": false,
+		"noEmitOnError": false,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"noImplicitReturns": true,
+		"strict": true,
+		"preserveConstEnums": true,
+		"skipLibCheck": true,
+		"useUnknownInCatchVariables": false
+	},
+	"include": ["src"]
+}

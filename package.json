@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "@journeyapps/sqlcipher": "^5.3.1",
+    "@types/node": "^18.8.4",
     "jamp3": "^0.4.3",
     "mp3-parser": "^0.3.0",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "typescript": "^4.8.4"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
